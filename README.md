@@ -10,7 +10,7 @@ A portable Windows utility for switching supported Xbox One USB controllers betw
 
 ## Download
 
-**[Download XDriverSwapper v1.0.4 portable ZIP](docs/downloads/XDriverSwapper-Portable-v1.0.4.zip)**
+**[Download XDriverSwapper v1.0.5 portable ZIP](docs/downloads/XDriverSwapper-Portable-v1.0.5.zip)**
 
 [Corresponding source code](docs/downloads/XDriverSwapper-Source.zip)
 
@@ -22,10 +22,10 @@ The web page is in `docs/index.html`, ready for GitHub Pages. See [PUBLISH.md](P
 
 ## Supported hardware
 
-Microsoft VID `045E`; USB PIDs `02D1`, `02DD`, `02E3`, `02EA`, `0B00`, `0B05`.
+Microsoft VID `045E`; USB PIDs `02D1`, `02DD`, `02E3`, `02EA`, `0B00`, `0B05`, `0B12`.
 Composite devices: controller interface `MI_00` only.
 
-Bluetooth, wireless adapters, Xbox 360, Xbox Series and third-party controllers
+Bluetooth, wireless adapters, Xbox 360 and third-party controllers
 are not included in this release. A compatible Microsoft-signed factory driver must
 already be available in Windows before switching. Windows Update can supply it.
 
@@ -60,3 +60,5 @@ is not covered by the website code license.
 
 made by **NandorFIX**  
 [www.konzol-szerviz.hu](https://www.konzol-szerviz.hu/)
+
+Version 1.0.5 adds Series USB PID 0B12, including converted One S. Firmware is never modified. No Windows USB hardware testing was available for this update.
