@@ -62,3 +62,7 @@ made by **NandorFIX**
 [www.konzol-szerviz.hu](https://www.konzol-szerviz.hu/)
 
 Version 1.0.5 adds Series USB PID 0B12, including converted One S. Firmware is never modified. No Windows USB hardware testing was available for this update.
+
+## Experimental firmware beta
+
+[Portable v1.1.0-beta and limitations](https://nandorhu.github.io/XDriverSwapper/firmware-beta.html). Supports One S 1708 and Series 1914 via WinUSB. Includes current-version recovery package backup (not a full flash or calibration dump). No Windows USB hardware testing was available. Stable v1.0.5 remains the default download.
