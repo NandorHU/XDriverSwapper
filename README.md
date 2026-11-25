@@ -10,15 +10,32 @@ A portable Windows utility for switching supported Xbox One USB controllers betw
 
 ## Download
 
-**[Download XDriverSwapper v1.0.5 portable ZIP](docs/downloads/XDriverSwapper-Portable-v1.0.5.zip)**
+**[Download XDriverSwapper v1.0.6 portable ZIP](https://github.com/NandorHU/XDriverSwapper/releases/download/v1.0.6/XDriverSwapper-Portable-v1.0.6.zip)**
+([corresponding source code](https://github.com/NandorHU/XDriverSwapper/releases/download/v1.0.6/XDriverSwapper-Source.zip))
 
-[Corresponding source code](docs/downloads/XDriverSwapper-Source.zip)
+**[v1.0.7 test release - restore fix](docs/downloads/XDriverSwapper-Portable-v1.0.7.zip)**
+([corresponding source code](docs/downloads/XDriverSwapper-Source-v1.0.7.zip)), see [below](#v107-test-release).
 
 Extract the entire ZIP and launch `XDriverSwapper.exe`. Keep `libwdi.dll` beside it.
 Approve the Windows administrator prompt, connect the controller with a USB data cable,
 and select the driver mode you need. Unplug and reconnect the cable if requested.
 
 The web page is in `docs/index.html`, ready for GitHub Pages. See [PUBLISH.md](PUBLISH.md).
+
+## v1.0.7 test release
+
+Fixes the restore result: since 1.0.3 the app could report a finished restore although Windows had not restarted the
+controller, because another program kept it open. It could also remove the WinUSB package in that state.
+
+- Success is reported only when the factory driver is really running; otherwise the app asks to close the program that
+  uses the controller and to replug, verifies the device afterwards, and only then cleans up.
+- A failed WinUSB installation no longer leaves its package behind; the per-package certificate is removed with it.
+- New **Repair** button for leftovers created by this app only. Packages of other tools (e.g. Zadig) are not touched.
+
+Not yet tested with a real controller; driver installation, restore and Repair need hardware validation.
+`libwdi.dll` is byte-identical to 1.0.6. SHA-256: `dc7713f3c40bc5e2b5a971298bcb1d0bc31a0d8227856dfb31db08d4a863cb66`
+
+**With 1.0.6 or older:** close the calibration tool, browser and Steam before restoring, and always replug the controller afterwards.
 
 ## Supported hardware
 
@@ -65,4 +82,4 @@ Version 1.0.5 adds Series USB PID 0B12, including converted One S. Firmware is n
 
 ## Experimental firmware beta
 
-[Portable v1.1.0-beta and limitations](https://nandorhu.github.io/XDriverSwapper/firmware-beta.html). Supports One S 1708 and Series 1914 via WinUSB. Includes current-version recovery package backup (not a full flash or calibration dump). No Windows USB hardware testing was available. Stable v1.0.5 remains the default download.
+[Portable v1.1.0-beta and limitations](https://nandorhu.github.io/XDriverSwapper/firmware-beta.html). Supports One S 1708 and Series 1914 via WinUSB. Includes current-version recovery package backup (not a full flash or calibration dump). No Windows USB hardware testing was available. Stable v1.0.6 remains the default download.
